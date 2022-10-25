@@ -1,3 +1,6 @@
 Flask
 ffmpeg
 whisper
+django
+gunicorn
+django-heroku
