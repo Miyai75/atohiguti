@@ -1,0 +1,1 @@
+web: gunicorn simpleserver:app --log-file=-
