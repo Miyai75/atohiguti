@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Abyssinica+SIL&display=swap" rel="stylesheet" />
+
+        <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-eikaiwa-lesson.css')}}"> -->
+        <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi-eikaiwa-lesson.css')}}">
+    </head>
+    <body>
+        <!-- header -->
+        <div class="header">
+            <div class="header-color"></div>
+        </div>
+        <span class="header-title">Higuchi</span>
+        <span class="header-top">TOP</span>
+        <span class="header-tab1">なんか2</span>
+        <span class="header-tab2">なんか1</span>
+        <div class="menu">
+
+        </div>
+
+        <span class="menu-home"><a href="/">ホーム</a></span>
+        <span class="menu-eikaiwa"><a href="/lessonselect">英会話</a></span>
+        <span class="menu-gacha"><a href="/gatya">ガチャ</a></span>
+        <span class="menu-kisekae"><a href="/dressup">着せ替え</a></span>
+
+        
+        <div class="menu-acount_icon"></div>
+        <img class="menu-acount_icon" src="{{url_for('static', filename='img/higuchi.png')}}" alt="イラスト２" style="display: block; margin: auto;">
+
+        <span class="menu-acount_name">{{name}}</span>
+        <span class="menu-acount_login">前回ログイン</span>
+        <span class="menu-acount_logintime">{{date}}</span>
+        <!-- 謎 -->
+        <div class="name"></div>
+
+
+        <!-- 謎 -->
+        <div class="v98_109"></div>
+
+            
+            <!-- キャラクター画面 -->
+            <div class="v126_60"></div>
+            <!-- 場所指定 -->
+            <div class="v126_45">
+            <!--  上吹き出し-->
+                <div class="v126_46"></div>
+                <div class="name"></div>
+                <span class="v126_59">Hello!! I’m Higuchi</span>
+            </div>
+            <!-- 場所指定 -->
+            <div class="v126_61">
+                <!-- 下吹き出し -->
+                <div class="v126_62"></div>
+                <div class="name"></div>
+                <span class="v126_64">Nice to meet you!</span>
+            </div>
+
+                <span class="v126_65">〇〇 lesson1</span>
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

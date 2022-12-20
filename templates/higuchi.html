@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Abyssinica+SIL&display=swap" rel="stylesheet" />
+
+        <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi.css')}}"> -->
+        <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi.css')}}">
+
+
+        <!-- <link rel="stylesheet" href="C:/higuchi/atohiguti/static/css/higuchi.css"> -->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <!-- <script type="text/javascript" script src="C:/higuchi/atohiguti/static/js/jquery-3.6.1.min.js"></script> -->
+        
+        <!-- <script src="C:/higuchi/atohiguti/static/js/change.js"></script> -->
+
+        
+        
+    </head>
+    <body>
+        <!-- header -->
+        <div class="header">
+            <div class="header-color"></div>
+        </div>
+        <!-- 三本線のタブのもの -->
+        <!-- <span class="header-tab1">なんか２</span>
+            <span class="header-tab2">なんか</span>
+            <div class="v98_72">
+            <div class="v98_73">
+
+            </div>
+            <div class="v98_74">
+                
+            </div>
+            <div class="v98_75">
+                
+            </div>
+            <div class="v98_76">
+                
+            </div>
+        </div> -->
+        
+        <span class="header-title">Higuchi</span>
+        <span class="header-top">TOP</span>
+        <span class="header-tab1">なんか2</span>
+        <span class="header-tab2">なんか1</span>
+        <div class="menu">
+            
+        </div>
+        <!-- 左上の歯車 -->
+        <!-- <div class="v98_80">
+            <div class="v98_81">
+                
+            </div>
+            <div class="v98_82">
+            </div>
+        </div> -->
+        
+        <!-- 選択中の黄色のバー -->
+        <!-- <div class="v98_83"></div> -->
+        
+        <span class="menu-home"><a href="/logout">ログアウト</a></span>
+        <span class="menu-eikaiwa"><a href="/lessonselect">英会話</a></span>
+        <span class="menu-gacha"><a href="/gatya">ガチャ</a></span>
+        <span class="menu-kisekae"><a href="/dressup">着せ替え</a></span>
+        
+        
+        <div class="menu-acount_icon"></div>
+        <img class="menu-acount_icon" src="{{url_for('static', filename='img/higuchi.png')}}" alt="イラスト２" width=60% height=100% style="display: block; margin: auto;">
+        
+        <span class="menu-acount_name">{{name}}</span>
+        <span class="menu-acount_login">前回ログイン</span>
+        <span class="menu-acount_logintime">{{date}}</span>
+
+        <!-- 謎 -->
+        <div class="name"></div>
+
+        
+        
+        <!-- 着せ替えアイコン -->
+        <!-- <div class="v98_93">
+            <div class="v98_94"></div>
+            <div class="v98_95"></div>
+            <div class="v98_96"></div>
+            <div class="v98_97"></div>
+        </div> -->
+        
+        <!-- ガチャアイコン -->
+        <!-- <div class="v98_98">
+            <div class="v98_99"></div>
+            <div class="v98_100"></div>
+            <div class="v98_101"></div>
+            <div class="v98_102"></div>
+            <div class="v98_103"></div>
+        </div> -->
+        
+        <!-- 英会話アイコン -->
+        <!-- <div class="v98_104">
+            <div class="v98_105"></div>
+        </div>
+    -->
+    
+    <!-- ホームアイコン -->
+    <!-- <div class="v98_106">
+        <div class="v98_107"></div>
+        <div class="v98_108"></div>
+    </div> -->
+    
+    
+    
+    
+
+    
+    <!-- <div class="icon_home">
+        <img src="home.png" >
+    </div> -->
+    
+    
+    <!-- 謎 -->
+    
+    <!-- <div class="v98_109"></div> -->
+    
+    <!-- 吹き出し -->
+    <!-- <div class="home-hukidashi"> -->
+        
+        
+        <div class="home-hukidashi" id="cm1" style="display:block;border:1px solid #cccccc;padding:5px 10px 5px 10px;">
+            <p>Hello! I'm Higuchi.</p>
+            
+            <button class="btn">＞</button>
+        </div>
+        
+        
+        <div class="home-hukidashi" id="cm2" style="display:none;border:1px solid #cccccc;padding:5px 10px 5px 10px;">
+            <p>Nice to meet you.</p>
+            
+            <button class="btn">＞</button>
+            
+        </div>
+                
+                
+        <div class="home-hukidashi" id="cm3" style="display:none;border:1px solid #cccccc;padding:5px 10px 5px 10px;">
+            <p>Let's study English!</p>
+            <button class="btn">＞</button>
+            
+            
+        </div>
+        
+        <!-- <div class="v98_111"></div>
+            <div class="name"></div> -->
+            <!-- <span class="menu-talk">Hello!! I’m Higuchi</span> -->
+            
+            <!-- <p>Hello!! I’m Higuchi</p>
+                
+            </div> -->
+            
+            
+            <!-- text切り替え -->
+            
+            
+            <!-- キャラクター画面 -->
+            <div class="menu-character">
+            <div class="kawauso">
+            <img src="{{url_for('static', filename='img/higuchi.png')}}" alt="イラスト２" width=60% height=100% style="display: block; margin: auto;">
+            <!-- 参考: https://style.potepan.com/articles/23332.html -->
+            <!-- ファイルのみで画像表示できた（about blank　になる） -->
+        </div>
+    
+    </div>
+    
+    <!-- 右アイコン星 -->
+    <!-- <div class="v98_113">
+        <div class="v98_114"></div>
+    </div> -->
+    
+    <!-- 右アイコン共有 -->
+    <!-- <div class="v98_115">
+        <div class="v98_116"></div>
+        <div class="v98_117"></div>
+        <div class="v98_118"></div>
+    </div> -->
+    
+    <!-- 右アイコンにっこり -->
+    <!-- <div class="v98_119">
+        <div class="v98_120"></div>
+        <div class="v98_121"></div>
+        <div class="v98_122"></div>
+        <div class="v98_123"></div>
+    </div>  -->
+    
+    
+    
+    
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.6.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/change.js') }}"></script>
+</body>
+
+
+</html>

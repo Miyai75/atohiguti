@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Almarai&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi-eikaiwa.css')}}">
+
+    </head>
+    <body>
+        <!-- <div class="v114_2">
+            <div class="v114_3">
+
+            </div>
+        <span class="v114_4">ガチャ</span>
+        <div class="v114_5">
+            <div class="v114_6">
+
+            </div>
+            <div class="v114_7">
+
+            </div>
+            <div class="v114_8">
+
+            </div>
+            <div class="v114_9">
+
+            </div>
+            <div class="v114_10">
+
+            </div>
+        </div>
+        <span class="v114_11">着せ替え</span>
+        <div class="v114_12">
+            <div class="v114_13">
+
+            </div>
+            <div class="v114_14">
+
+            </div>
+            <div class="v114_15">
+
+            </div>
+            <div class="v114_16">
+
+            </div>
+        </div>
+        <div class="v114_17">
+            <div class="v114_18">
+
+            </div>
+            <div class="v114_19">
+
+            </div>
+        </div>
+        <span class="v114_20">ホーム</span>
+        <div class="name">
+
+        </div>
+        <span class="v114_22">2021-08-03 18:00</span>
+        <span class="v114_23">前回ログイン</span>
+        <div class="v114_24">
+
+        </div>
+        <span class="v114_25">アカウントネーム</span>
+        <div class="v114_26">
+            <div class="v114_27">
+
+            </div>
+            <div class="v114_28">
+
+            </div>
+        </div>
+        <div class="v114_29">
+
+        </div>
+        <span class="v114_30">なんか２</span>
+        <span class="v114_31">なんか</span>
+        <span class="v114_32">TOP</span>
+        <span class="v114_33">Higuchi</span>
+        <div class="v114_34">
+
+        </div>
+        <div class="v114_35">
+
+        </div>
+        <span class="v114_36">英会話</span>
+        
+        <div class="v114_37">
+            <div class="v114_38">
+
+            </div>
+
+        </div>
+        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- header -->
+         <div class="header">
+            <div class="header-color"></div>
+        </div>
+        <!-- 三本線のタブのもの -->
+        <!-- <span class="header-tab1">なんか２</span>
+        <span class="header-tab2">なんか</span>
+        <div class="v98_72">
+            <div class="v98_73">
+
+            </div>
+            <div class="v98_74">
+
+            </div>
+            <div class="v98_75">
+
+            </div>
+            <div class="v98_76">
+
+            </div>
+        </div> -->
+        
+        <span class="header-title">Higuchi</span>
+        <span class="header-top">TOP</span>
+        <span class="header-tab1">なんか2</span>
+        <span class="header-tab2">なんか1</span>
+        <div class="menu">
+
+        </div>
+        <!-- 左上の歯車 -->
+        <!-- <div class="v98_80">
+            <div class="v98_81">
+
+            </div>
+            <div class="v98_82">
+            </div>
+        </div> -->
+
+        <!-- 選択中の黄色のバー -->
+        <!-- <div class="v98_83"></div> -->
+
+    
+        <span class="menu-home"><a href="/">ホーム</a></span>
+        <span class="menu-eikaiwa"><a href="/lessonselect">英会話</a></span>
+        <span class="menu-gacha"><a href="/gatya">ガチャ</a></span>
+        <span class="menu-kisekae"><a href="/dressup">着せ替え</a></span>
+
+        
+        <div class="menu-acount_icon"></div>
+        <img class="menu-acount_icon" src="{{url_for('static', filename='img/higuchi.png')}}" alt="イラスト２" style="display: block; margin: auto;">
+        <span class="menu-acount_name">{{name}}</span>
+        <span class="menu-acount_login">前回ログイン</span>
+        <span class="menu-acount_logintime">{{date}}</span>
+        <!-- 謎 -->
+        <div class="name"></div>
+
+
+
+        <!-- 着せ替えアイコン -->
+        <!-- <div class="v98_93">
+            <div class="v98_94"></div>
+            <div class="v98_95"></div>
+            <div class="v98_96"></div>
+            <div class="v98_97"></div>
+        </div> -->
+
+        <!-- ガチャアイコン -->
+        <!-- <div class="v98_98">
+            <div class="v98_99"></div>
+            <div class="v98_100"></div>
+            <div class="v98_101"></div>
+            <div class="v98_102"></div>
+            <div class="v98_103"></div>
+        </div> -->
+
+        <!-- 英会話アイコン -->
+        <!-- <div class="v98_104">
+            <div class="v98_105"></div>
+        </div>
+         -->
+
+         <!-- ホームアイコン -->
+         <!-- <div class="v98_106">
+            <div class="v98_107"></div>
+            <div class="v98_108"></div>
+        </div> -->
+
+        <!-- 謎 -->
+        <div class="v98_109"></div>
+
+        <!-- 吹き出し -->
+        <div class="home-hukidashi">
+            <div class="v98_111"></div>
+            <div class="name"></div>
+        </div>
+        
+        <span class="menu-talk">Hello!! I’m Higuchi</span>
+
+        <div class="menu-character"></div>
+
+        <!-- 右アイコン星 -->
+        <!-- <div class="v98_113">
+            <div class="v98_114"></div>
+        </div> -->
+
+        <!-- 右アイコン共有 -->
+        <!-- <div class="v98_115">
+            <div class="v98_116"></div>
+            <div class="v98_117"></div>
+            <div class="v98_118"></div>
+        </div> -->
+
+        <!-- 右アイコンにっこり -->
+        <!-- <div class="v98_119">
+            <div class="v98_120"></div>
+            <div class="v98_121"></div>
+            <div class="v98_122"></div>
+            <div class="v98_123"></div>
+        </div>  -->
+
+        
+
+    </div>
+
+        <div class="eikaiwa-header_obi">
+        </div>
+        <span class="eikaiwa-header_zisseki">☆                 2/30</span>
+        <span class="eikaiwa-header_course">コース選択</span>
+
+        <div class="eikaiwa-menu_icon1"></div>
+        <div class="eikaiwa-menu_icon2"> </div>
+        <div class="eikaiwa-menu_icon3"> </div>
+
+        
+        <span class="eikaiwa-menu_1-1"><a href="/lesson">lesson1</a></span>
+        <span class="eikaiwa-menu_1-2">lesson2</span>
+        <span class="eikaiwa-menu_1-3">lesson3</span>
+        <span class="eikaiwa-menu_1-4">lesson4</span>
+        <span class="eikaiwa-menu_1-5">lesson5</span>
+    
+
+
+        <div class="v114_50">
+            <span class="v114_51">☆</span>
+            <span class="v114_52">☆</span>
+            <span class="v114_53">☆</span>
+        </div>
+        <div class="v114_54">
+            <span class="v114_55">☆</span>
+            <span class="v114_56">☆</span>
+            <span class="v114_57">☆</span>
+        </div>
+        <div class="v114_58">
+            <span class="v114_59">☆</span>
+            <span class="v114_60">☆</span>
+            <span class="v114_61">☆</span>
+        </div>
+        <div class="v114_62">
+            <span class="v114_63">☆</span>
+            <span class="v114_64">☆</span>
+            <span class="v114_65">☆</span>
+        </div>
+        <div class="v114_66">
+            <span class="v114_67">☆</span>
+            <span class="v114_68">☆</span>
+            <span class="v114_69">☆</span>
+        </div>
+
+
+
+        <span class="v114_70">lesson1</span>
+        <span class="v114_71">lesson2</span>
+        <span class="v114_72">lesson3</span>
+        <span class="v114_73">lesson4</span>
+        <span class="v114_74">lesson5</span>
+        <div class="v114_75">
+            <span class="v114_76">☆</span>
+            <span class="v114_77">☆</span>
+            <span class="v114_78">☆</span>
+        </div><div class="v114_79">
+            <span class="v114_80">☆</span>
+            <span class="v114_81">☆</span>
+            <span class="v114_82">☆</span>
+        </div>
+        <div class="v114_83">
+            <span class="v114_84">☆</span>
+            <span class="v114_85">☆</span>
+            <span class="v114_86">☆</span>
+        </div>
+        <div class="v114_87">
+            <span class="v114_88">☆</span>
+            <span class="v114_89">☆</span>
+            <span class="v114_90">☆</span>
+        </div>
+        <div class="v114_91">
+            <span class="v114_92">☆</span>
+            <span class="v114_93">☆</span>
+            <span class="v114_94">☆</span>
+        </div>
+
+
+        
+        <span class="v114_95">lesson1</span>
+        <span class="v114_96">lesson2</span>
+        <span class="v114_97">lesson3</span>
+        <span class="v114_98">lesson4</span>
+        <span class="v114_99">lesson5</span>
+        <div class="v114_100">
+            <span class="v114_101">☆</span>
+            <span class="v114_102">☆</span>
+            <span class="v114_103">☆</span>
+        </div>
+        <div class="v114_104">
+            <span class="v114_105">☆</span>
+            <span class="v114_106">☆</span>
+            <span class="v114_107">☆</span>
+        </div>
+        <div class="v114_108">
+            <span class="v114_109">☆</span>
+            <span class="v114_110">☆</span>
+            <span class="v114_111">☆</span>
+        </div>
+        <div class="v114_112">
+            <span class="v114_113">☆</span>
+            <span class="v114_114">☆</span>
+            <span class="v114_115">☆</span>
+        </div>
+        <div class="v114_116">
+            <span class="v114_117">☆</span>
+            <span class="v114_118">☆</span>
+            <span class="v114_119">☆</span>
+        </div>
+    </div>
+    </body>
+
+    
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-eikaiwa.css')}}">
+    </html>  

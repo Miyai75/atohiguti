@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あと樋口|gameplay画面</title>
+    <title>あと樋口|新規登録画面</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <script src="{{url_for('static', filename='js/js.cookie.js')}}"></script>
+
 </head>
 <body>
     <!-- ヘッダー -->
@@ -14,20 +16,23 @@
     </header>
     <!-- メイン情報 -->
     <div class="container">
-        <h1>ゲームプレイ画面</h1>
-        <p>ここでゲームプレイします</p>
+        <h1>新規登録画面</h1>
+        <p>ログインidとメールアドレスとパスワードをにゅうりょくしてください</p>
+        <p>{{alart}}</p>
+        <form method="POST" action = "/newok">
+            <p>loginID：<input type="text" name="loginID"></p>
+            <p>mailaddres：<input type="text" name="mailaddres"></p>
+            <p>password：<input type="password" name="password"></p>
+            <p><input type="submit" value="送信する"></p>
+        </form>
     </div>
     <!-- リンクとか情報載せる -->
     <nav>
-        <h1>メインメニュー</h1>
-        <ul>
-          <li><a href="/" id="index">メイン画面に戻る</a></li>
-          <li><a href="/dressup"> 着せ替えする</a></li>
-        </ul>
+        <a href="/">ログイン画面へ</a>
     </nav>
     <!-- フッター -->
     <footer>
-        
+
     </footer>
 
     <!-- jsの読み込み -->

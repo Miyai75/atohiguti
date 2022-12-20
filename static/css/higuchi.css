@@ -1,0 +1,704 @@
+@charset "utf-8";
+
+/* {
+  box-sizing: border-box;
+} */
+body {
+  font-size: 14px;
+  background-image: url("../img/haikei.png");
+  background-repeat:no-repeat;
+ 
+  background-position: 300px  90px;
+  /* background-size: 100% auto; */
+  /* background-size: contain; */
+  /* background-size:cover; */
+  background-size: 1800px 1000px;
+  /* https://www.nishishi.com/css/background-size-css3.html */
+  /* width: 100%;
+  height: 928px; */
+}
+.header {
+  width: 100%;
+  height: 1024px;
+  /* background: rgba(238,237,237,1); */
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.header-color {
+  width: 100%;
+  height: 96px;
+  background: rgba(76,109,159,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+/* .v98_72 {
+  width: 59px;
+  height: 51px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 22px;
+  left: 1349px;
+  overflow: hidden;
+}
+.v98_73 {
+  width: 44px;
+  background: url("../images/v98_73.png");
+  opacity: 1;
+  position: absolute;
+  top: 21px;
+  left: 7px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_74 {
+  width: 44px;
+  background: url("../images/v98_74.png");
+  opacity: 1;
+  position: absolute;
+  top: 12px;
+  left: 7px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_75 {
+  width: 44px;
+  background: url("../images/v98_75.png");
+  opacity: 1;
+  position: absolute;
+  top: 29px;
+  left: 7px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_76 {
+  width: 44px;
+  background: url("../images/v98_76.png");
+  opacity: 1;
+  position: absolute;
+  top: 38px;
+  left: 7px;
+  border: 2px solid rgba(255,255,255,1);
+} */
+.header-title {
+  width: 248px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 25px;
+  left: 32px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+.header-top {
+  width: 79px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 35px;
+  left: 784px;
+  font-family: Alegreya Sans SC;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+.header-tab1 {
+  width: 105px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 35px;
+  left: 968px;
+  font-family: Alegreya Sans SC;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.header-tab2 {
+  width: 105px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 35px;
+  left: 863px;
+  font-family: Alegreya Sans SC;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+
+.menu {
+  width: 323px;
+  height: 933px;
+  background: rgba(127,165,224,1);
+  opacity: 1;
+  position: absolute;
+  top: 96px;
+  left: 0px;
+  overflow: hidden;
+}
+
+/* 
+.v98_80 {
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 108px;
+  left: 14px;
+  overflow: hidden;
+}
+.v98_81 {
+  width: 6px;
+  height: 6px;
+  background: url("../images/v98_81.png");
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_82 {
+  width: 22px;
+  height: 22px;
+  background: url("../images/v98_82.png");
+  opacity: 1;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border: 2px solid rgba(255,255,255,1);
+} */
+/* 
+.v98_83 {
+  width: 265px;
+  height: 41px;
+  background: rgba(184,195,61,1);
+  opacity: 1;
+  position: absolute;
+  top: 387px;
+  left: 2px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+} */
+
+
+
+
+
+
+
+
+
+.menu-home {
+  width: 181px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 385px;
+  left: 77px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+
+
+
+.menu-eikaiwa {
+  width: 181px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 444px;
+  left: 77px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.menu-gacha {
+  width: 181px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 575px;
+  left: 77px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.menu-kisekae {
+  width: 181px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 507px;
+  left: 77px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.menu-acount_icon {
+  width: 86px;
+  height: 86px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 143px;
+  left: 8px;
+  border-radius: 50%;
+}
+.menu-acount_name{
+  width: 202px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 155px;
+  left: 103px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.menu-acount_login {
+  width: 109px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 249px;
+  left: 22px;
+  font-family: Inter;
+  font-weight: Medium Italic;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.menu-acount_logintime{
+  width: 133px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 252px;
+  left: 130px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 17px;
+  opacity: 1;
+  text-align: right;
+}
+.name {
+  color: #fff;
+}
+
+
+/* メニューアイコン */
+/* 
+.v98_93 {
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 519px;
+  left: 22px;
+  overflow: hidden;
+}
+.v98_94 {
+  width: 20px;
+  height: 20px;
+  background: url("../images/v98_94.png");
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_95 {
+  width: 8px;
+  height: 2px;
+  background: url("../images/v98_95.png");
+  opacity: 1;
+  position: absolute;
+  top: 14px;
+  left: 8px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_96 {
+  width: 0px;
+  background: url("../images/v98_96.png");
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_97 {
+  width: 0px;
+  background: url("../images/v98_97.png");
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_98 {
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 587px;
+  left: 24px;
+  overflow: hidden;
+}
+.v98_99 {
+  width: 16px;
+  height: 10px;
+  background: url("../images/v98_99.png");
+  opacity: 1;
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_100 {
+  width: 20px;
+  height: 5px;
+  background: url("../images/v98_100.png");
+  opacity: 1;
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_101 {
+  height: 15px;
+  background: url("../images/v98_101.png");
+  opacity: 1;
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_102 {
+  width: 7px;
+  height: 5px;
+  background: url("../images/v98_102.png");
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_103 {
+  width: 7px;
+  height: 5px;
+  background: url("../images/v98_103.png");
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 12px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_104 {
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 456px;
+  left: 22px;
+  overflow: hidden;
+}
+.v98_105 {
+  width: 18px;
+  height: 20px;
+  background: url("../images/v98_105.png");
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_106 {
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 396px;
+  left: 22px;
+  overflow: hidden;
+}
+.v98_107 {
+  width: 18px;
+  height: 20px;
+  background: url("../images/v98_107.png");
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  border: 2px solid rgba(255,255,255,1);
+}
+.v98_108 {
+  width: 6px;
+  height: 10px;
+  background: url("../images/v98_108.png");
+  opacity: 1;
+  position: absolute;
+  top: 12px;
+  left: 9px;
+  border: 2px solid rgba(255,255,255,1);
+} */
+
+/* 
+.v98_109 {
+  width: 100%;
+  height: 928px;
+  background: url("../images/v98_109.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 96px;
+  left: 317px;
+  overflow: hidden;
+} */
+
+/* 
+.home-hukidashi {
+  width: 447px;
+  height: 165px;
+  background: url("../images/v98_110.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 191px;
+  left: 960px;
+  overflow: hidden;
+} */
+
+
+.home-hukidashi {
+
+  width: 447px;
+  height: 100px;
+  top: 150px;
+  left: 960px;
+
+  position: relative;
+  /* display: inline-block; */
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  /* min-width: 120px;
+  max-width: 100%; */
+  color: #555;
+  font-size: 30px;
+  background: rgba(217,217,217,1);
+  border-radius: 10px;
+
+}
+
+.home-hukidashi:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  margin-left: -15px;
+  border: 30px solid transparent;
+  border-top: 30px solid rgba(217,217,217,1);
+  
+}
+
+/* .home-hukidashi p { */
+  /* margin: 0;
+  padding: 0; */
+  /* text-align:center;
+  padding:25px;
+  margin:0 auto;
+} */
+
+
+
+.home-hukidashi .btn{
+
+  position: relative;
+	top: -60px;
+  left: 380px;
+
+}
+
+
+
+
+
+/* カワウソ吹き出し */
+/* .v98_111 {
+  width: 447px;
+  height: 128px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.name {
+  color: #fff;
+} */
+
+
+/* 右アイコン */
+/* 
+.v98_113 {
+  width: 39px;
+  height: 41px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 399px;
+  left: 1317px;
+  overflow: hidden;
+}
+.v98_114 {
+  width: 32px;
+  height: 32px;
+  background: url("../images/v98_114.png");
+  opacity: 1;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_115 {
+  width: 36px;
+  height: 32px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 531px;
+  left: 1320px;
+  overflow: hidden;
+}
+.v98_116 {
+  width: 22px;
+  height: 20px;
+  background: url("../images/v98_116.png");
+  opacity: 1;
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_117 {
+  width: 9px;
+  height: 8px;
+  background: url("../images/v98_117.png");
+  opacity: 1;
+  position: absolute;
+  top: 4px;
+  left: 22px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_118 {
+  width: 16px;
+  height: 14px;
+  background: url("../images/v98_118.png");
+  opacity: 1;
+  position: absolute;
+  top: 4px;
+  left: 15px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_119 {
+  width: 32px;
+  height: 34px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 466px;
+  left: 1320px;
+  overflow: hidden;
+}
+.v98_120 {
+  width: 26px;
+  height: 28px;
+  background: url("../images/v98_120.png");
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_121 {
+  width: 10px;
+  height: 2px;
+  background: url("../images/v98_121.png");
+  opacity: 1;
+  position: absolute;
+  top: 19px;
+  left: 10px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_122 {
+  width: 0px;
+  background: url("../images/v98_122.png");
+  opacity: 1;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v98_123 {
+  width: 0px;
+  background: url("../images/v98_123.png");
+  opacity: 1;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  border: 2px solid rgba(0,0,0,1);
+} */
+
+
+/* 
+.menu-talk {
+  width: 364px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 230px;
+  left: 1022px;
+  font-family: Abyssinica SIL;
+  font-weight: Regular;
+  font-size: 32px;
+  opacity: 1;
+  text-align: left;
+} */
+
+.menu-character {
+  width: 791px;
+  height: 470px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 365px;
+  left: 483px;
+  overflow: hidden;
+
+
+}
+/* 
+.kawauso {
+  top: 365px;
+  left: 500px;
+} */

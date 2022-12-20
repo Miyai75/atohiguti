@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>あと樋口|home画面</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <script src="{{url_for('static', filename='js/js.cookie.js')}}"></script>
+
 </head>
 <body>
     <!-- ヘッダー -->
@@ -15,14 +17,17 @@
     <!-- メイン情報 -->
     <div class="container">
         <h1>ホーム画面</h1>
+        <p id="greeting" >{{ greeting }}</p>
         <p>ここで場面セレクトします</p>
     </div>
     <!-- リンクとか情報載せる -->
     <nav>
         <h1>メインメニュー</h1>
         <ul>
-          <li><a href="/gameplay">ゲームプレイする</a></li>
-          <li><a href="/dressup"> 着せ替えする</a></li>
+            <li><a href="/logout" id = "login_status">ログアウトする</a></li>
+            <li><a href="/gameplay">ゲームプレイする</a></li>
+            <li><a href="/gatya"> ガチャを引く</a></li>
+            <li><a href="/dressup"> 着せ替えする</a></li>
         </ul>
     </nav>
     <!-- フッター -->
