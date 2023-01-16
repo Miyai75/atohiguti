@@ -1,0 +1,100 @@
+body {
+    font-size: 14px;
+  }
+  .v250_91 {
+    width: 100%;
+    height: 1024px;
+    background: url("../images/v250_91.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v250_92 {
+    width: 100%;
+    height: 1024px;
+    background: url("../images/v250_92.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v250_93 {
+    width: 100%;
+    height: 100%;
+    background: url("../images/v250_93.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v250_94 {
+    width: 864px;
+    color: rgba(54,141,222,1);
+    position: absolute;
+    top: 93px;
+    left: 288px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 128px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v250_95 {
+    width: 528px;
+    color: rgba(51,107,215,1);
+    position: absolute;
+    top: 254px;
+    left: 456px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v250_96 {
+    width: 737px;
+    height: 67px;
+    background: rgba(247,247,247,1);
+    opacity: 1;
+    position: absolute;
+    top: 425px;
+    left: 124px;
+    overflow: hidden;
+  }
+  .v250_97 {
+    width: 533px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 415px;
+    left: 300px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v250_98 {
+    width: 376px;
+    color: rgba(26,24,24,1);
+    position: absolute;
+    top: 656px;
+    left: 532px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 48px;
+    opacity: 1;
+    text-align: center;
+  }

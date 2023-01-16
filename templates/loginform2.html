@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+</head>
+        <body>
+            <form method="POST" action = "/login">
+            <div class="v249_62">
+            <div class="v249_63">
+            <div class="v249_64">
+            
+            </div>
+            <span class="v249_65">ATOHIGUCHI</span>
+            <span class="v249_66">ログイン画面</span>
+            <span class="v249_67">ログインIDとパスワードを入力してください</span><br>
+            <span class="v249_67"><p>{{alart}}</p></span>
+            
+            <span class="v249_68">loginID :</span>
+            <span class="v249_69"><a href="/newuser">新規登録する</a></span>
+            <span class="v249_70">password :</span>
+         <span ><input class="v249_71" type="text" name="loginID"  ></span>
+
+            
+            <span ><input  class="v249_72" name="password" type="password"></span>
+            
+            <span ><input class="v249_74" type="submit" value="ログイン" ></span>
+            
+        </form>
+    </div>
+            </body>
+            <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+    </html>  

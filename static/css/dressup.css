@@ -1,0 +1,58 @@
+/* ラジオボタン */
+input[type=radio]+label:before{
+    content: "";
+    display: inline-block;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+} 
+input[type=radio][value="higuchi"]+label:before{
+    background-image: url(../img/higuchi.png);
+    top: 575px;
+    left: 412px;
+}
+input[type=radio][value="ribbon"]+label:before{
+    background-image: url(../img/ribbon.png);
+    top: 575px;
+    left: 657px;
+}
+input[type=radio][value="scarf"]+label:before{
+    background-image: url(../img/scarf.png);
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 150px;
+    top: 555px;
+    left: 922px;
+}
+input[type=radio][value="5000yen"]+label:before{
+    background-image: url(../img/5000yen.png);
+    top: 575px;
+    left: 1147px;
+}
+input[type=radio]:checked+label::before{
+    border: 3px solid #000;
+    box-sizing: border-box;
+}
+input[type=radio]{
+    display: none;
+} 
+li{
+    position: absolute;
+    top: 300px;
+    left: 1150px;
+    background-color: snow;
+}
+.button{
+    width:120px;
+    height: 80px;
+    position: absolute;
+    top:470px;
+    left: 1080px;
+}
+
+.ok{
+    color: blue;
+}
+.ng{
+    color:red;
+}

@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, redirect, url_for
+from flask import Flask, request, render_template, session, redirect, url_for,flash
 from db import dbmodule as db
 from datetime import timedelta 
 
@@ -24,11 +24,15 @@ def home():
     if "login_id" in session:
         user.user_info = user.userFindDB(session["login_id"])
         print(f"ホーム画面で{user.user_info}")
-        return render_template('higuchi.html', name = session["login_id"], date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))        
-    return render_template('loginform.html')
+        return render_template(
+            'higuchi.html',
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
+            imgname = user.user_info[0][4])        
+    return render_template('loginform2.html')
 
 # ログインするやつ
-@app.route('/login/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     global user
     if request.method == "POST":
@@ -36,7 +40,7 @@ def login():
         password = request.form['password']
         if loginID == "" or password == "":
             alart = "全ての項目を埋めてください"
-            return render_template('loginform.html', alart = alart)
+            return render_template('loginform2.html', alart = alart)
 
         print("postできました")
         # データベースからデータを検索
@@ -46,7 +50,7 @@ def login():
         # idが無かったり、パスワードが会ってなかったら戻る
         if result == [] or result[0][3] != password:
             alart = "loginIDまたはパスワードが間違っています"
-            return render_template('loginform.html', alart = alart)
+            return render_template('loginform2.html', alart = alart)
         
         session.permanent = True 
         session["login_id"] = loginID #sessionにuser情報を保存
@@ -55,6 +59,7 @@ def login():
     else:
         if "login_id" in session:
             return redirect(url_for("home"))
+        
 
 # ログアウトするやつ
 @app.route('/logout')
@@ -74,7 +79,7 @@ def newok():
     password = request.form['password']
     if loginID == "" or mailaddres == "" or password == "":
         alart = "全ての項目を埋めてください"
-        return render_template('newuser.html', alart = alart)
+        return render_template('newuser2.html', alart = alart)
 
     print(loginID,mailaddres,password)
     # データベースからデータを検索
@@ -83,17 +88,17 @@ def newok():
     # login_id検索でヒットしてしまった時
     if result != []:
         alart = "すでに使われてるlogin_idです。"
-        return render_template('newuser.html', alart = alart)
+        return render_template('newuser2.html', alart = alart)
     print("db行けました")
     #データベースに追加
     user.userAddDB()     
-    return render_template('newok.html', result = f"{loginID},{mailaddres}で登録しました！")
+    return render_template('kakuninn.html', result = f"loginID:{loginID}\nMailaddres:{mailaddres}\nで登録しました！")
     
 
 # 新規登録画面
 @app.route('/newuser', methods=['GET', 'POST'])
 def newuser():
-    return render_template('newuser.html')
+    return render_template('newuser2.html')
 
 # ガチャ画面
 @app.route('/gatya/')
@@ -113,6 +118,7 @@ def gatya_result():
         if result[0] == "a":
             allget = result[1]
         else:
+            allget = ""
             user.itemlogAddDB(user.user_info[0][0],result[0])
         print(result)
         return render_template('gatya_result.html', result = result[2], allget = allget)
@@ -127,8 +133,12 @@ def gameplay():
     if "login_id" in session:
         user.user_info = user.userFindDB(session["login_id"])
         print(f"ホーム画面で{user.user_info}")
-        return render_template('higuchi-eikaiwa.html', name = session["login_id"], date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
-    return render_template('loginform.html')
+        return render_template(
+            'higuchi-eikaiwa.html',
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
+            imgname = user.user_info[0][4])
+    return render_template('loginform2.html')
 
 #英会話画面
 @app.route('/lesson')
@@ -137,13 +147,73 @@ def lesson():
     if "login_id" in session:
         user.user_info = user.userFindDB(session["login_id"])
         print(f"ホーム画面で{user.user_info}")
-        return render_template('higuchi-eikaiwa-lesson.html', name = session["login_id"], date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
-    return render_template('loginform.html')
+        return render_template(
+            'higuchi-eikaiwa-lesson.html',
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
+            imgname = user.user_info[0][4])
+    return render_template('loginform2.html')
 
 # 着せ替え画面
-@app.route('/dressup/')
+@app.route('/dressup/',methods=['GET','POST'])
 def dressup():
-    return render_template('dressup.html')
+    global user
+    if "login_id" in session:
+        itemnamelist=[]
+        user.user_info = user.userFindDB(session["login_id"])
+        # 自分の持ってるitemidを検索
+        item = user.itemlogFindDB(session["login_id"],False)
+        print(item)
+        # itemidをnameに変換
+        for id in item:
+            print(f"kokomitene:{id}")
+            itemnamelist.append(user.itemFindDB(id)[0][0])
+        print(itemnamelist)
+        imgname = user.user_info[0][4]
+        return render_template(
+            'higuchi-kisekae.html',
+            imgname=imgname,
+            itemnamelist = itemnamelist,
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
+    return render_template('loginform2.html')
+
+# 着せ替え決定したら
+@app.route('/dressupok/',methods=['POST'])
+def dressupok():
+    global user
+    if "login_id" in session:
+        itemnamelist=[]
+        radio = request.form['radio']
+        # 自分の持ってるitemidを検索
+        item = user.itemlogFindDB(session["login_id"],False)
+        print(item)
+        # itemidをnameに変換
+        for id in item:
+            print(f"kokomitene:{id}")
+            itemnamelist.append(user.itemFindDB(id)[0][0])
+        print(itemnamelist)
+
+        # 持ってるアイテムだったらそれに変更
+        if radio in itemnamelist:
+            user.userimgUpdateDB(session["login_id"],radio)
+            flash(f"{radio}樋口に変更しました！",'ok')
+        else:
+            flash("まだ取得していません！！",'ng')
+
+        # 今のimgを反映
+        user.user_info = user.userFindDB(session["login_id"])
+        imgname = user.user_info[0][4]
+        kousin = ""
+        print(imgname)
+        print(radio)
+    return render_template(
+        'higuchi-kisekae.html',
+        imgname=imgname,
+        kousin=kousin, 
+        itemnamelist=itemnamelist,
+        name = session["login_id"],
+        date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
 
 
 

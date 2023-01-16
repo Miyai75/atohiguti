@@ -35,27 +35,30 @@ class DBmoduleClass:
 
         self.user_info = rows
         return rows
+
     # データ追加
     def userAddDB(self):
         print("検索開始")
-        sql_1 = f"INSERT INTO users(login_id, mailaddress, password, icon_img, star_point, pre_logintime, post_logintime)VALUES('{self.login_id}','{self.mail_add}', '{self.password}', 'default.img', 0, '{datetime.now()}', '{datetime.now()}');"
-
+        sql_1 = f"INSERT INTO users(login_id, mailaddress, password, icon_img, star_point, pre_logintime, post_logintime)VALUES('{self.login_id}','{self.mail_add}', '{self.password}', 'higuchi.png', 0, '{datetime.now()}', '{datetime.now()}');"
         # データベースに接続してsql文で検索
         with self.getConnection() as conn:
             with conn.cursor() as cur:
                 cur.execute(sql_1)
 
         print("追加完了")
+        user_id = self.userFindDB(self.login_id)[0][0]
+        self.itemlogAddDB(user_id,1)
         
         return "追加完了"
 
-    # データ追加
+    # 時間データ更新
     def userUpdateDB(self, sqlnum, login_id):
         print("アップデート開始")
         sqls =[]
+        # ログインするとき
         sqls.append(f"UPDATE users SET post_logintime = '{datetime.now()}' WHERE login_id = '{login_id}';")
+        # ログアウトするとき
         sqls.append (f"UPDATE users SET pre_logintime = post_logintime WHERE login_id = '{login_id}';")
-        
         # データベースに接続してsql文で検索
         with self.getConnection() as conn:
             with conn.cursor() as cur:
@@ -64,6 +67,29 @@ class DBmoduleClass:
         print("アップデート完了")
         
         return "追加完了"
+
+    # user画像データ更新
+    def userimgUpdateDB(self, login_id, radiovalue):
+        print("検索開始")
+        sql_1 = f"UPDATE users SET icon_img = '{radiovalue}.png' where login_id ='{login_id}';"
+        # データベースに接続してsql文で検索
+        with self.getConnection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(sql_1)
+        
+        return "追加完了"
+
+    #items検索
+    def itemFindDB(self, item_id):
+        print("検索開始")
+        sql_1 = f"Select name from items where id = {int(item_id)};"
+        # データベースに接続してsql文で検索
+        with self.getConnection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(sql_1)
+                name = cur.fetchall()
+        
+        return name
     
     # データベースから該当するデータを受け取る(ガチャテーブル)  
     def itemlogFindDB(self, user_info, isgatya=True ):
@@ -127,6 +153,6 @@ class DBmoduleClass:
         print("ログ追加完了")
         
         return "ログ完了"
-a = DBmoduleClass("tanaka","tanaka1111","aaa@example.com")
-result = a.itemlogFindDB(False)
-print(result)
+# a = DBmoduleClass("tanaka","tanaka1111","aaa@example.com")
+# result = a.itemlogFindDB(False)
+# print(result)

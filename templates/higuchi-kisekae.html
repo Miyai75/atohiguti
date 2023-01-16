@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Abyssinica+SIL&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-kisekae.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/dressup.css')}}">
+    </head>       
+<body> 
+    <!-- header -->
+    <div class="header">
+        <div class="header-color"></div>
+    </div>
+    <!-- 三本線のタブのもの -->
+    <!-- <span class="header-tab1">なんか２</span>
+    <span class="header-tab2">なんか</span>
+    <div class="v98_72">
+        <div class="v98_73">
+
+        </div>
+        <div class="v98_74">
+
+        </div>
+        <div class="v98_75">
+
+        </div>
+        <div class="v98_76">
+
+        </div>
+    </div> -->
+    <span class="header-title">Higuchi</span>
+    <span class="header-top">TOP</span>
+    <span class="header-tab1">なんか2</span>
+    <span class="header-tab2">なんか1</span>
+    <div class="menu">
+
+    </div>
+    <!-- 左上の歯車 -->
+        <!-- <div class="v98_80">
+            <div class="v98_81">
+
+            </div>
+            <div class="v98_82">
+            </div>
+        </div> -->
+
+        <!-- 選択中の黄色のバー -->
+        <!-- <div class="v98_83"></div> -->
+
+        <span class="menu-home"><a href="/">ホーム</a></span>
+        <span class="menu-eikaiwa"><a href="/lessonselect">英会話</a></span>
+        <span class="menu-gacha"><a href="/gatya">ガチャ</a></span>
+        <span class="menu-kisekae"><a href="/dressup">着せ替え</a></span>
+
+        <img class="menu-acount_icon" src="{{url_for('static', filename='img/')}}{{imgname}}" alt="higuchi" width="250px" height="250px">
+        <span class="menu-acount_name">{{name}}</span>
+        <span class="menu-acount_login">前回ログイン</span>
+        <span class="menu-acount_logintime">{{date}}</span>
+
+        <!-- 謎 -->
+        <div class="name"></div>
+        <!-- 着せ替えアイコン -->
+        <!-- <div class="v98_93">
+            <div class="v98_94"></div>
+            <div class="v98_95"></div>
+            <div class="v98_96"></div>
+            <div class="v98_97"></div>
+        </div> -->
+
+        <!-- ガチャアイコン -->
+        <!-- <div class="v98_98">
+            <div class="v98_99"></div>
+            <div class="v98_100"></div>
+            <div class="v98_101"></div>
+            <div class="v98_102"></div>
+            <div class="v98_103"></div>
+        </div> -->
+
+        <!-- 英会話アイコン -->
+        <!-- <div class="v98_104">
+            <div class="v98_105"></div>
+        </div>
+         -->
+
+         <!-- ホームアイコン -->
+         <!-- <div class="v98_106">
+            <div class="v98_107"></div>
+            <div class="v98_108"></div>
+        </div> -->
+         <!-- <div class="icon_home">
+            <img src="home.png" >
+        </div> -->
+        
+
+        <!-- 謎 -->
+        <div class="v98_109"></div>
+
+        <!-- 吹き出し -->
+        <div class="home-hukidashi">
+            <div class="v98_111"></div>
+            <div class="name"></div>
+        </div>
+        
+        <span class="menu-talk">Hello!! I’m Higuchi</span>
+
+       <!-- キャラクター画面 -->
+        <div class="menu-character"></div>
+
+        <!-- 右アイコン星 -->
+        <!-- <div class="v98_113">
+            <div class="v98_114"></div>
+        </div> -->
+
+        <!-- 右アイコン共有 -->
+        <!-- <div class="v98_115">
+            <div class="v98_116"></div>
+            <div class="v98_117"></div>
+            <div class="v98_118"></div>
+        </div> -->
+
+        <!-- 右アイコンにっこり -->
+        <!-- <div class="v98_119">
+            <div class="v98_120"></div>
+            <div class="v98_121"></div>
+            <div class="v98_122"></div>
+            <div class="v98_123"></div>
+        </div>  -->
+
+        
+
+    </div>
+
+    <div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action = "/dressupok">
+            <span class="v237_61"><input type="radio" name="radio" value="higuchi" id="higuchi" checked><label  for="higuchi"></label></span>
+            <span class="v77_203"><input  type="radio" name="radio" value="ribbon" id="ribbon"><label  for="ribbon"></label></span>
+            <span class="v77_208"><input  type="radio" name="radio" value="scarf" id="scarf"><label  for="scarf"></label></span>
+            <span class="v77_207"><input  type="radio" name="radio" value="5000yen" id="5000yen"><label  for="5000yen"></label></span>
+            <input class="button" type="submit" value="決定！">
+        </form>
+        <!-- <span class="v237_61"></span> -->
+        <!-- <span class="v77_203"></span> -->
+        <span class="v77_202"></span><!--下1つ目-->
+        <!--2-->
+        <span class="v77_204"></span>
+        <span class="v77_205"></span><!--3-->
+        <span class="v77_206"></span><!--3-->
+        <!--4-->
+        <!-- <span class="v77_207"></span> -->
+        <!--4-->
+        <!-- <span class="v77_208"></span> -->
+        <!--〇-->
+        <img id="show" class="v77_209" src="{{url_for('static', filename='img/')}}{{imgname}}" alt="higuchi" width="250px" height="250px">
+        
+    </div>
+
+    <script>
+        // postの時変数として渡される
+        var itemlist = {{itemnamelist|tojson}};
+        console.log(itemlist);
+        document.getElementsByName('radio').forEach(function(radio) {
+             radio.addEventListener('change', function() {
+                  if (this.checked) {
+                       console.log(this.value);
+                       document.getElementById("show").src = "/static/img/" + this.value  + ".png"
+                  }
+             })
+        })
+    </script>
+
+
+</body>
+
+</html>
+
+ 

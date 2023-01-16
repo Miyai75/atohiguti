@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>あと樋口|dressing up画面</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dressup.css')}}">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -16,7 +17,25 @@
     <div class="container">
         <h1>着せ替え画面</h1>
         <p>ここで着せ替えします</p>
-    </div>
+        <img id="show" src="{{url_for('static', filename='img/')}}{{imgname}}" alt="higuchi" width="250px" height="250px">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <!-- <img src="{{url_for('static', filename='img/')}}" alt="higuchi" width="250px" height="250px"> -->
+        <form method="POST" action = "/dressupok">
+            <input type="radio" name="radio" value="higuchi" id="higuchi" checked><label  for="higuchi"></label>
+            <input type="radio" name="radio" value="ribbon" id="ribbon"><label  for="ribbon"></label>
+            <input type="radio" name="radio" value="scarf" id="scarf"><label  for="scarf"></label>
+            <input type="radio" name="radio" value="5000yen" id="5000yen"><label  for="5000yen"></label>
+            <input type="submit" value="決定！">
+        </form>
+        </div>
     <!-- リンクとか情報載せる -->
     <nav>
         <h1>メインメニュー</h1>
@@ -31,6 +50,20 @@
     </footer>
 
     <!-- jsの読み込み -->
-    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/index.js')}}"></script> -->
+    <script>
+        // postの時変数として渡される
+        var itemlist = {{itemnamelist|tojson}};
+        console.log(itemlist);
+        document.getElementsByName('radio').forEach(function(radio) {
+             radio.addEventListener('change', function() {
+                  if (this.checked) {
+                       console.log(this.value);
+                       document.getElementById("show").src = "/static/img/" + this.value  + ".png"
+                  }
+             })
+        })
+    </script>
 </body>
 </html>
+

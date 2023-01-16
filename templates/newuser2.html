@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sinnki.css')}}">
+    <script src="{{url_for('static', filename='js/js.cookie.js')}}"></script>
+
+</head>
+    <div class="v250_75">
+    <div class="v250_76">
+    <div class="v250_77">
+    </div>
+    <div class="v250_78">
+    </div>
+    <span class="v250_79">ATOHIGUCHI</span>
+    <span class="v250_80">新規登録画面</span>
+    <span class="v250_81">ログインIDとメールアドレスとパスワードを入力してください<br>{{alart}}</span>
+    
+    <form method="POST" action = "/newok">
+
+        <span class="v250_82">loginID :</span>
+        <span class="v250_83"><a href="/">ログイン画面へ</a></span>
+        <span class="v250_84">password :</span>
+        <span class="v250_85">mailaddres :</span>
+        
+        <span ><input class="v250_86" type="text" name="loginID"  ></span>        
+        <span ><input class="v250_87" type="text" name="mailaddres"  ></span>
+        <span ><input class="v250_88" type="text" name="password"  ></span>
+
+        
+        <span><input class="v250_90" type="submit" value="送信する"></span>
+    </form>
+</div></div></body>
+<link rel="stylesheet" href="{{url_for('static', filename='css/sinki.css')}}">
+</html>  
+<br/><br/> 
