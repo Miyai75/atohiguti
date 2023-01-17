@@ -34,8 +34,7 @@
 
         
         <div class="menu-acount_icon"></div>
-        <img class="menu-acount_icon" src="{{url_for('static', filename='img/higuchi.png')}}" alt="イラスト２" style="display: block; margin: auto;">
-
+        <img class="menu-acount_icon" src="{{url_for('static', filename='img/')}}{{imgname}}" alt="higuchi" width="250px" height="250px">
         <span class="menu-acount_name">{{name}}</span>
         <span class="menu-acount_login">前回ログイン</span>
         <span class="menu-acount_logintime">{{date}}</span>
@@ -47,7 +46,7 @@
             <!-- キャラクター画面 -->
             <div class="character">
                 <div class ="def">
-                <img id="higuchi" src="{{url_for('static', filename='img/higuchi.png')}}" width=60% height=100% style= "display: block; margin: auto;">
+                <img id="higuchi" src="{{url_for('static', filename='img/')}}{{imgname}}" width=60% height=100% style= "display: block; margin: auto;">
                 </div>
                 <ul id="hantei"></ul>
             </div>
