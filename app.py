@@ -115,8 +115,13 @@ def gatya_result():
     global user
     if "login_id" in session:
         point=user.userFindDB(session["login_id"])[0][5]
+        # result = [0]*3
+        # result[2] = "higuchi-odoroki.png"
+        # allget = ""
         if point < 1:
             alart = "ポイントが足りません！！"
+            point=user.userFindDB(session["login_id"])[0][5]
+            return render_template('gatya.html', point=point, alart=alart)
         else:
             alart=""
             user.userStarpointUpdateDB(1,session["login_id"],1)
@@ -125,7 +130,7 @@ def gatya_result():
             if result[0] == "a":
                 allget = result[1]
             else:
-                allget = ""
+                
                 user.itemlogAddDB(user.user_info[0][0],result[0])
         print(result)
         return render_template('gatya_result.html', result = result[2], allget = allget, alart=alart)
