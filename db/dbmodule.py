@@ -79,6 +79,18 @@ class DBmoduleClass:
         
         return "追加完了"
 
+    # user★データ更新
+    def userStarpointUpdateDB(self, sqlnum, login_id, point):
+        print("検索開始")
+        sqls =[]
+        sqls.append(f"UPDATE users SET star_point = star_point + {point} where login_id = '{login_id}';")
+        sqls.append(f"UPDATE users SET star_point = star_point - {point} where login_id = '{login_id}';")
+        # データベースに接続してsql文で検索
+        with self.getConnection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(sqls[sqlnum])
+        
+        return "追加完了"
     #items検索
     def itemFindDB(self, item_id):
         print("検索開始")
@@ -125,7 +137,7 @@ class DBmoduleClass:
                     # 全て取得しているとき
                     if len(log_result) == itemnum:
                         print("ALL COMPLETE!!")
-                        return ["a","全て取得済み","gatya.png"]
+                        return ["a","全て取得済み","higuchi-happy.png"]
                     else:
                         # ランダムにアイテムを取得
                         cur.execute(getsql)

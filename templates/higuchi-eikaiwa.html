@@ -5,8 +5,9 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Almarai&display=swap" rel="stylesheet" />
-
-        <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi-eikaiwa.css')}}">
+        
+        <!-- <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi-eikaiwa.css')}}"> -->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-eikaiwa.css')}}">
 
     </head>
     <body>
@@ -233,7 +234,7 @@
 
         <div class="eikaiwa-header_obi">
         </div>
-        <span class="eikaiwa-header_zisseki">☆                 2/30</span>
+        <span class="eikaiwa-header_zisseki">☆{{point}}</span>
         <span class="eikaiwa-header_course">コース選択</span>
 
         <div class="eikaiwa-menu_icon1"></div>
@@ -344,5 +345,4 @@
 
     
 
-    <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-eikaiwa.css')}}">
     </html>  

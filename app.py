@@ -104,7 +104,8 @@ def newuser():
 @app.route('/gatya/')
 def gatya():
     if "login_id" in session:
-        return render_template('gatya.html')
+        point=user.userFindDB(session["login_id"])[0][5]
+        return render_template('gatya.html', point=point)
     else:
         return redirect(url_for("home"))
 
@@ -113,33 +114,54 @@ def gatya():
 def gatya_result():
     global user
     if "login_id" in session:
-        result = user.itemlogFindDB(session["login_id"])
-        # 全て取得しているとき
-        if result[0] == "a":
-            allget = result[1]
+        point=user.userFindDB(session["login_id"])[0][5]
+        if point < 1:
+            alart = "ポイントが足りません！！"
         else:
-            allget = ""
-            user.itemlogAddDB(user.user_info[0][0],result[0])
+            alart=""
+            user.userStarpointUpdateDB(1,session["login_id"],1)
+            result = user.itemlogFindDB(session["login_id"])
+            # 全て取得しているとき
+            if result[0] == "a":
+                allget = result[1]
+            else:
+                allget = ""
+                user.itemlogAddDB(user.user_info[0][0],result[0])
         print(result)
-        return render_template('gatya_result.html', result = result[2], allget = allget)
+        return render_template('gatya_result.html', result = result[2], allget = allget, alart=alart)
     else:
         print("mawattemasu")
         return redirect(url_for("home"))
 
 # レッスンセレクト画面
-@app.route('/lessonselect')
-def gameplay():
+@app.route('/lessonselect',methods=['GET'])
+def gameplay1():
     global user
     if "login_id" in session:
         user.user_info = user.userFindDB(session["login_id"])
         print(f"ホーム画面で{user.user_info}")
+        point=user.userFindDB(session["login_id"])[0][5]
         return render_template(
             'higuchi-eikaiwa.html',
             name = session["login_id"],
             date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
-            imgname = user.user_info[0][4])
-    return render_template('loginform2.html')
+            imgname = user.user_info[0][4],
+            point=point)
+    return redirect(url_for("home"))
 
+# レッスンセレクト画面[POST]
+@app.route('/lessonselect',methods=['POST'])
+def gameplay2():
+    global user
+    if "login_id" in session:
+        user.user_info = user.userFindDB(session["login_id"])
+        point = request.form['point']
+        # データベースにポイント追加
+        user.userStarpointUpdateDB(0,session["login_id"],point)
+        point=user.userFindDB(session["login_id"])[0][5]
+        return redirect(url_for("gameplay1"))
+
+    return redirect(url_for("home"))
 #英会話画面
 @app.route('/lesson')
 def lesson():
@@ -152,7 +174,7 @@ def lesson():
             name = session["login_id"],
             date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
             imgname = user.user_info[0][4])
-    return render_template('loginform2.html')
+    return redirect(url_for("home"))
 
 # 着せ替え画面
 @app.route('/dressup/',methods=['GET','POST'])
@@ -163,12 +185,12 @@ def dressup():
         user.user_info = user.userFindDB(session["login_id"])
         # 自分の持ってるitemidを検索
         item = user.itemlogFindDB(session["login_id"],False)
-        print(item)
+        # print(item)
         # itemidをnameに変換
         for id in item:
-            print(f"kokomitene:{id}")
+            # print(f"kokomitene:{id}")
             itemnamelist.append(user.itemFindDB(id)[0][0])
-        print(itemnamelist)
+        # print(itemnamelist)
         imgname = user.user_info[0][4]
         return render_template(
             'higuchi-kisekae.html',
@@ -176,7 +198,7 @@ def dressup():
             itemnamelist = itemnamelist,
             name = session["login_id"],
             date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
-    return render_template('loginform2.html')
+    return redirect(url_for("home"))
 
 # 着せ替え決定したら
 @app.route('/dressupok/',methods=['POST'])
@@ -187,10 +209,10 @@ def dressupok():
         radio = request.form['radio']
         # 自分の持ってるitemidを検索
         item = user.itemlogFindDB(session["login_id"],False)
-        print(item)
+        # print(item)
         # itemidをnameに変換
         for id in item:
-            print(f"kokomitene:{id}")
+            # print(f"kokomitene:{id}")
             itemnamelist.append(user.itemFindDB(id)[0][0])
         print(itemnamelist)
 
@@ -207,13 +229,14 @@ def dressupok():
         kousin = ""
         print(imgname)
         print(radio)
-    return render_template(
-        'higuchi-kisekae.html',
-        imgname=imgname,
-        kousin=kousin, 
-        itemnamelist=itemnamelist,
-        name = session["login_id"],
-        date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
+        return render_template(
+            'higuchi-kisekae.html',
+            imgname=imgname,
+            kousin=kousin, 
+            itemnamelist=itemnamelist,
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'))
+    return redirect(url_for("home"))
 
 
 

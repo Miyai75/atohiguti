@@ -18,6 +18,8 @@
     <div class="container">
         <h1>ガチャ画面</h1>
         {{alart}}
+        <h1>★の数 {{point}}</h1>
+        
         <img src="{{url_for('static', filename='img/gatya.png')}}" alt="gatyahiguchi" width="250px" height="250px">
         <form method="POST" action = "/gatya_result">
             <p><input type="submit" value="ガチャを回す"></p>

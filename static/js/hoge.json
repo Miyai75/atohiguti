@@ -1,0 +1,62 @@
+[
+    {
+        "num":"1",
+        "name":"Hello! I'm higuchi!",
+        "speaker":"higuchi",
+        "url":"http://hoge.net",
+        "hyouzyou":"1"
+
+    },
+    {
+        "num":"2",
+        "name":"nice to meet you",
+        "speaker":"higuchi",
+        "url":"",
+        "hyouzyou":"2"
+
+        
+    },
+    {
+        "num":"3",
+        "name":"nice to meet you too",
+        "speaker":"player",
+        "url":"http://hoge.com",
+        "hyouzyou":"1"
+
+    },
+   
+    {
+        "num":"4",
+        "name":"Great!",
+        "speaker":"higuchi",
+        "url":"http://hoge.net"
+
+    },
+
+    {
+        "num":"5",
+        "name":"how are you",
+        "speaker":"player",
+        "url":"http://hoge.net"
+
+    },
+    {
+        "num":"6",
+        "name":"I am so happy",
+        "speaker":"higuchi",
+        "url":""
+        
+    },
+    {
+        "num":"7",
+        "name":"Let's study English!",
+        "speaker":"higuchi",
+        "url":"http://hoge.com"
+    },
+    {
+        "num":"8",
+        "name":"Thank you :)",
+        "speaker":"higuchi",
+        "url":"http://hoge.com"
+    }
+]

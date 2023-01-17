@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head lang="en-US">
+        
         <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Abyssinica+SIL&display=swap" rel="stylesheet" />
-
-        <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-eikaiwa-lesson.css')}}"> -->
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.6.1.min.js') }}"></script>
+        <!-- <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi-eikaiwa-lesson.css')}}"> -->
         <link rel="stylesheet" href="{{url_for('static', filename='./css/higuchi-eikaiwa-lesson.css')}}">
+            <meta charset="utf-8">
+            <title>Speak Test</title>
     </head>
     <body>
         <!-- header -->
         <div class="header">
             <div class="header-color"></div>
         </div>
+
         <span class="header-title">Higuchi</span>
         <span class="header-top">TOP</span>
         <span class="header-tab1">なんか2</span>
@@ -29,41 +34,202 @@
 
         
         <div class="menu-acount_icon"></div>
-        <img class="menu-acount_icon" src="{{url_for('static', filename='img/')}}{{imgname}}" alt="higuchi" width="250px" height="250px">
+        <img class="menu-acount_icon" src="{{url_for('static', filename='img/higuchi.png')}}" alt="イラスト２" style="display: block; margin: auto;">
 
         <span class="menu-acount_name">{{name}}</span>
         <span class="menu-acount_login">前回ログイン</span>
         <span class="menu-acount_logintime">{{date}}</span>
-        <!-- 謎 -->
-        <div class="name"></div>
 
 
-        <!-- 謎 -->
-        <div class="v98_109"></div>
-
-            
+        <span class="lesson-menu">lesson1</span>
+        <span class="lesson-menu1" id="star">★獲得数:0</span>
+        
             <!-- キャラクター画面 -->
-            <div class="v126_60"></div>
-            <!-- 場所指定 -->
-            <div class="v126_45">
-            <!--  上吹き出し-->
-                <div class="v126_46"></div>
-                <div class="name"></div>
-                <span class="v126_59">Hello!! I’m Higuchi</span>
-            </div>
-            <!-- 場所指定 -->
-            <div class="v126_61">
-                <!-- 下吹き出し -->
-                <div class="v126_62"></div>
-                <div class="name"></div>
-                <span class="v126_64">Nice to meet you!</span>
+            <div class="character">
+                <div class ="def">
+                <img id="higuchi" src="{{url_for('static', filename='img/higuchi.png')}}" width=60% height=100% style= "display: block; margin: auto;">
+                </div>
+                <ul id="hantei"></ul>
             </div>
 
-                <span class="v126_65">〇〇 lesson1</span>
-        </div>
+            <!--  上吹き出し-->
+                <div class="top-hukidashi">
+                <p>higuchi</p>
+                <!-- 上に表示する文 -->
+                    <ul id="top"></ul>
+                <!-- 樋口評価文 -->
+                    <ul id="top2"></ul>
+                </div>   
+             <!-- 下吹き出し -->
+                <div class="bottom-hukidashi">
+                    <p>player</p>
+                    <!-- 音声認識の結果 -->
+                    <ul id="output2"></ul>
+
+                    <!-- 下吹き出しの内容 -->
+                     <ul id="bottom"></ul>
+
+                </div>
+
+<!--  先に進めるボタン　-->
+    <button class="btn" id="btnn">次へ</button>
+    <form method="POST" action = "/lessonselect">
+        <input id="point" type="hidden" name="point" value="隠しデータ">
+        <input class="lastbtn" type="submit" value="セレクト画面に戻る">
+    </form>
+
+                
+    <!-- <button class="btn2"onclick="startbutton()">start</button>
+    <button class="btn3"onclick="stopbutton()">stop</button> -->
+        
+        
         
 
-    </div>
+
+
+
+    
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/level.js') }}"></script> -->
+    
+    <script>
+        
+        var n = 0;
+        // ポイント増やし用
+        const starelem = document.getElementById("star");
+        const formelem = document.getElementById("point")
+        let starcount = 0
+
+        // DOM監視用↓
+        const elem = document.getElementById('top2');
+        const config ={
+            attributes: true,
+            childList:true,
+            subtree: true
+        };
+        console.log(elem)
+        var observer = new MutationObserver(function(motations){
+            /** DOMの変化が起こった時の処理 */
+            console.log('DOMが変化しました');
+            changetext = motations[0].addedNodes[0].textContent
+            console.log()
+            if(changetext == "Perfect！"){
+                Pluspoint();
+            }
+            // const imgelem = document.getElementsById("higuchi");
+            // console.log(imgelem.getAttribute('src'))
+        });
+        	
+        observer.observe(elem, config);
+
+        // ★カウントする関数
+        function Pluspoint(){
+            starcount++;
+            starelem.innerHTML="★獲得数:"+starcount;
+            formelem.value = starcount;
+            console.log(formelem.value)
+        }
+
+        $(function(){
+            json = "./static/js/hoge.json";
+            target = $('#top');
+            target2 = $('#bottom');
+            $.getJSON(json, function(data,status){
+                
+                
+                $(".btn").on('click',function(){
+                    var text = '<p>';
+                    m = 0
+                    if(n >= data.length){
+                        console.log(data.length)
+                        $( ".btn").hide();
+                        $( ".lastbtn").show();
+                        return 
+                        
+                    }
+                    line = '<i><span>'+(data[n].name)+'</span></i>';  // イチゴetc.
+                    attention = '<i><span>'+'マイクに向かって発音してね'+'</span></i>';  // マイクに向かって発音してね
+                    keisoku = '<i><span>'+'計測中....'+'</span></i>';  // 計測中
+                    gomenne = '<i><span>'+'うまく聞き取れなかったみたい..もう一度発音してね'+'</span></i>';
+                    
+
+                    // ひぐちの場合 
+                    if(data[n].speaker == "higuchi"){
+                        text2 ='<div class="top">'+text+line+'</p>'+'</div>';
+                        // ハイド設定   
+
+                        if( $( ".top").css( "display" )){
+                                $( ".top").hide();
+                                if( $(".bottom").css("display")){
+                                     $( ".bottom").hide(); 
+                                     $( ".bottom-mic").hide();
+                                }
+                                // if( $("#output2").css("display")){
+                                //  $( "#output2").hide(); 
+                                // }  
+                            }
+                            $(target).append(text2);
+                            
+                    // playerの場合
+                    }else if(data[n].speaker == "player"){
+
+                        text2 = '<div class="bottom">'+text+line+'</p>'+'</div>'
+                        + '<div class ="bottom-mic"><button class="start" onclick="startbutton()">start</button>' 
+                        + '<button class="stop" onclick="stopbutton()">stop</button></div>'; // テキストを下に追加文;
+                        text3= '<div class="top">'+text+attention+'</p>'+'</div>';
+
+                        // ハイド設定          
+                         if( $( ".top").css( "display" )){
+                             $( ".top").hide();
+                            }
+                            // 次へボタンが消える
+                            if( $( ".btn").css( "display" )){
+                                $( ".btn").hide();
+                            }
+                            
+                            $(target2).append(text2); // 追加  
+                            $(target).append(text3); // 追加         
+                            
+                            
+                        // startを押したとき
+                        $('.start').click(function() {
+                            $( ".start").hide();
+                            $( ".top").hide();
+                            text3= '<div class="top">'+text+keisoku+'</p>'+'</div>';
+                            $(target).append(text3); // 追加  
+                            m = m+1       
+                        })
+                        // stopを押したとき
+                        $('.stop').click(function() {
+                            $( ".start").show(); 
+                            $( ".top").hide();
+                            if(m>0){text3= '<div class="top">'+text+gomenne+'</p>'+'</div>';
+                                $(target).append(text3); // 追加      
+                           
+                            }else{text3= '<div class="top">'+text+attention+'</p>'+'</div>';
+                                $(target).append(text3); // 追加      
+                            }
+                        })
+                        
+                    }
+                    
+                    n = n + 1
+                    //    m = 0
+                    
+                });
+
+                    
+            })
+                
+        })
+    
+    </script> 
+
+    
+
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/onsei.js') }}"></script>
 
 </body>
 </html>
