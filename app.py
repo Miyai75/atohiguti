@@ -105,7 +105,12 @@ def newuser():
 def gatya():
     if "login_id" in session:
         point=user.userFindDB(session["login_id"])[0][5]
-        return render_template('gatya.html', point=point)
+        return render_template(
+            'gatya.html',
+            point=point,
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
+            imgname = user.user_info[0][4])
     else:
         return redirect(url_for("home"))
 
@@ -117,7 +122,7 @@ def gatya_result():
         point=user.userFindDB(session["login_id"])[0][5]
         # result = [0]*3
         # result[2] = "higuchi-odoroki.png"
-        # allget = ""
+        allget = ""
         if point < 1:
             alart = "ポイントが足りません！！"
             point=user.userFindDB(session["login_id"])[0][5]
@@ -133,7 +138,14 @@ def gatya_result():
                 
                 user.itemlogAddDB(user.user_info[0][0],result[0])
         print(result)
-        return render_template('gatya_result.html', result = result[2], allget = allget, alart=alart)
+        return render_template(
+            'gatya_result.html',
+            result = result[2],
+            allget = allget,
+            alart=alart,
+            name = session["login_id"],
+            date = user.user_info[0][6].strftime('%Y-%m-%d %H:%M'),
+            imgname = user.user_info[0][4])
     else:
         print("mawattemasu")
         return redirect(url_for("home"))

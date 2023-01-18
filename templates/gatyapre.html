@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あと樋口|ガチャ画面</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <script src="{{url_for('static', filename='js/js.cookie.js')}}"></script>
+
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <h1>AROHIGUCHI</h1>
+    </header>
+    <!-- メイン情報 -->
+    <div class="container">
+        <h1>ガチャ画面</h1>
+        <h1>★の数 {{point}}</h1>
+        <p>{{alart}}</p>
+        
+        <img src="{{url_for('static', filename='img/gatya.png')}}" alt="gatyahiguchi" width="250px" height="250px">
+        <form method="POST" action = "/gatya_result">
+            <p><input type="submit" value="ガチャを回す"></p>
+        </form>
+    </div>
+    <!-- リンクとか情報載せる -->
+    <nav>
+        <a href="/">メイン画面へ</a>
+    </nav>
+    <!-- フッター -->
+    <footer>
+
+    </footer>
+
+    <!-- jsの読み込み -->
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+</body>
+</html>

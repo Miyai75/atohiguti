@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>あと樋口|ガチャ画面</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/higuchi-gatya.css')}}">
     <script src="{{url_for('static', filename='js/js.cookie.js')}}"></script>
 
 </head>
@@ -12,18 +12,59 @@
     <!-- ヘッダー -->
     <header>
         <h1>ガチャ結果</h1>
+        <div class="header">
+            <div class="header-color"></div>
+        </div>
+        <span class="header-title">Higuchi</span>
+        <span class="header-top">TOP</span>
+            <span class="header-tab1">なんか2</span>
+            <span class="header-tab2">なんか1</span>
+            <div class="menu">
+                
+            </div>
+    
+    
+            <span class="menu-home"><a href="/logout">ログアウト</a></span>
+            <span class="menu-eikaiwa"><a href="/lessonselect">英会話</a></span>
+            <span class="menu-gacha"><a href="/gatya">ガチャ</a></span>
+            <span class="menu-kisekae"><a href="/dressup">着せ替え</a></span>
+            
+            <div class="menu-acount_icon"></div>
+            <img class="menu-acount_icon" src="{{url_for('static', filename='img/')}}{{imgname}}" alt="higuchi" width="250px" height="250px">
+            <span class="menu-acount_name">{{name}}</span>
+            <span class="menu-acount_login">前回ログイン</span>
+            <span class="menu-acount_logintime">{{date}}</span>
     </header>
     <!-- メイン情報 -->
     <div class="container">
-        <h1>ガチャ結果画面</h1>
-        <img src="{{url_for('static', filename='img/gatya.png')}}" alt="higuchi" width="250px" height="250px">
-        <img src="{{url_for('static', filename='img/')}}{{result}}" alt="higuchi" width="250px" height="250px">
-        {{allget}}
+        <h1 class="daimei">ガチャ結果画面</h1>
+        <h1 class="hosi">★の数 {{point}}</h1>
+        <p class="alart">{{allget}}</p>
+        
+        <div class="menu-character">
+            <div class="kawauso">
+                <img src="{{url_for('static', filename='img/')}}{{result}}" alt="higuchi" width="250px" height="250px">
+                <!-- 参考: https://style.potepan.com/articles/23332.html -->
+            <!-- ファイルのみで画像表示できた（about blank　になる） -->
+            </div>
+            <div class="gatya-btn">
+            <form method="POST" action = "/gatya_result">
+                <p class ="gatya-size"></p>
+            </form>
+            </div>
+        </div>
+
+        <!-- <img src="{{url_for('static', filename='img/gatya.png')}}" alt="gatyahiguchi" width="250px" height="250px"> -->
+        <!-- <img src="/static/img/gatya.png" alt="gatyahiguchi" width="250px" height="250px"> -->
+
+       
+    </div>
+    <div class="container">
+    
     </div>
     <!-- リンクとか情報載せる -->
     <nav>
-        <a href="/">メイン画面へ</a>
-        <a href="/gatya">ガチャ画面へ</a>
+
     </nav>
     <!-- フッター -->
     <footer>
